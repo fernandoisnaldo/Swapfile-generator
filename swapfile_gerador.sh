@@ -1,13 +1,13 @@
 #! /bin/bash
 echo "Em que diretório você deseja que o arquivo swap esteja presente? (eg: ~/swapfile)"
 read swapfile
+sudo touch $swapfile
 echo "A partição onde fica /swapfile é Btrfs? (Y/n) "
 read btr
 if [!$btr]; then
     echo "Opção inválida"
     exit 1
 elif [$btr = "y" || $btr = "Y"]; then
-    sudo touch $swapfile
     sudo truncate -s 0 $swapfile
     sudo chattr +C $swapfile
     sudo btrfs property set $swapfile compression none
