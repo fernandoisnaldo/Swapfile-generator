@@ -8,7 +8,7 @@ read btr
 if [!$btr]; then
     echo "Opção inválida"
     exit 1
-elif [$btr = "y" || $btr = "Y"];
+elif [$btr = "y" || $btr = "Y"]; then
     sudo touch /swapfile
     sudo truncate -s 0 /swapfile
     sudo chattr +C /swapfile
