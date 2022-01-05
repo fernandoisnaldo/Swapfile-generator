@@ -3,7 +3,7 @@ echo "Em que diretório você deseja que o arquivo swap esteja presente? (eg: ~/
 read swapfile
 echo "A partição onde fica /swapfile é Btrfs? (Y/n) "
 read btr
-if [!($btr)]; then
+if [!$btr]; then
     echo "Opção inválida"
     exit 1
 elif [$btr = "y" || $btr = "Y"]; then
