@@ -18,8 +18,8 @@ echo "Informe o tamanho do arquivo swap em MB: "
 read tamanho
 sudo dd if=/dev/zero of=/swapfile bs=1M count=$tamanho status=progress
 sudo chmod 600 /swapfile
-sudo Bomkswap /swapfile
+sudo mkswap /swapfile
 sudo swapon /swapfile
-echo "# Entrada de swapfile gerada por swapfile_generator.sh" >> /etc/fstab
-echo "/swapfile none swap defaults 0 0" >> /etc/fstab
+sudo echo "# Entrada de swapfile gerada por swapfile_generator.sh" >> /etc/fstab
+sudo echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 exit 0
