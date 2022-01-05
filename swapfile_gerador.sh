@@ -18,4 +18,6 @@ sudo dd if=/dev/zero of=$swapfile bs=1M count=$tamanho status=progress
 sudo chmod 600 $swapfile
 sudo mkswap $swapfile
 sudo swapon $swapfile
+echo "Dica: Caso você queira reutilizar o arquivo swap na próxima inicialização, adicione-o no fstab."
+echo "Caso só queira reutiliza-lo em outra eventualidade, o comando é swapon /path/to/dir"
 exit 0
