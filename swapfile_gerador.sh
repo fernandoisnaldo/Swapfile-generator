@@ -5,11 +5,11 @@ cp /etc/fstab ~/fstab.bkp
 ls ~
 sudo su
 echo "A partição onde fica /swapfile é Btrfs? (Y/n) "
-read btrfs
-if [!$btrfs]; then
+read btr
+if [!$btr]; then
     echo "Opção inválida"
     exit 1
-elif [$btrfs = "y" || $btrfs = "Y"];
+elif [$btr = "y" || $btr = "Y"];
     touch /swapfile
     truncate -s 0 /swapfile
     chattr +C /swapfile
