@@ -15,7 +15,7 @@ elif [$btrfs = "y" || $btrfs = "Y"];
     chattr +C /swapfile
     btrfs property set /swapfile compression none
 fi
-echo “Informe o tamanho do arquivo swap em MB: ”
+echo "Informe o tamanho do arquivo swap em MB: "
 read tamanho
 dd if=/dev/zero of=/swapfile bs=1M count=$tamanho status=progress
 chmod 600 /swapfile
