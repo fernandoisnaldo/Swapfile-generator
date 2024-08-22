@@ -9,6 +9,6 @@ sudo dd if=/dev/zero of=$swapfile bs=1M count=$tamanho status=progress
 sudo chmod 600 $swapfile
 sudo mkswap $swapfile
 sudo swapon $swapfile
-echo "Dica: Você pode adicionar linha no fstab, caso deseje que o swapfile persista após reinicialização, por meio do seguinte comando:"
-echo "echo \"$swapfile none swap defaults 0 0\" >> /etc/fstab"
+echo "Dica: A seguinte linha deve ser adicionada no arquivo /etc/fstab, por meio de um editor de texto com privilégios de root, para que o arquivo swap seja persistente à reinciialização"
+echo "$swapfile none swap defaults 0 0 >> /etc/fstab"
 exit 0
